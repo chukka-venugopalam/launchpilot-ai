@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 LaunchPilot AI
 
-## Getting Started
+An autonomous AI agent that generates complete business launch strategies from a single goal.
 
-First, run the development server:
+Built for the **Kaggle Vibe Coding Agents Capstone Project**.
+
+## ✨ Features
+
+- **Autonomous Agent Pipeline** — Watch as the AI independently works through Observe → Think → Plan → Research → Execute → Reflect → Finish
+- **Real-time Streaming** — See each stage generate content live with animated transitions
+- **Comprehensive Reports** — Executive Summary, Market Research, Competitor Analysis, SWOT, Brand Identity, Marketing Plan, Launch Checklist, and more
+- **Self-Improvement** — The agent reviews its own work and produces an improved final version
+- **Project History** — All previous projects are saved to browser local storage
+- **Dark Theme** — Modern glassmorphism UI with smooth animations
+- **Export** — Download reports as Markdown
+
+## 🛠️ Tech Stack
+
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion**
+- **Google Gemini 2.0 Flash API**
+
+## 🚦 Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [npm](https://www.npmjs.com/)
+- A [Gemini API key](https://aistudio.google.com/apikey)
+
+## 📦 Installation
+
+1. **Clone or download the project**
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up your environment variables**
+
+Copy `.env.example` to `.env.local` and add your Gemini API key:
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and replace `your_gemini_api_key_here` with your actual key:
+
+```
+NEXT_PUBLIC_GEMINI_API_KEY=AIzaSy...
+```
+
+4. **Run the development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Open the app**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 How It Works
 
-## Learn More
+1. **Enter a Goal** — Type any business goal (e.g., "Start an AI fitness coaching startup")
+2. **Press Launch** — The autonomous agent begins working through its pipeline
+3. **Watch Live** — See each stage animate as the AI processes your goal
+4. **Review Results** — Browse the complete report with 13 sections
+5. **Export** — Download the report as Markdown for further use
 
-To learn more about Next.js, take a look at the following resources:
+### Agent Stages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Stage | What Happens |
+|-------|-------------|
+| 👁️ Observe | Understands the goal deeply |
+| 🧠 Think | Analyzes requirements |
+| 📋 Plan | Creates task plan |
+| 🔍 Research | Researches market & competitors |
+| ⚡ Execute | Generates all outputs |
+| 🔄 Reflect | Self-evaluates and improves |
+| ✨ Finish | Produces final report |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📋 Report Sections
 
-## Deploy on Vercel
+- Executive Summary
+- Task Plan
+- Market Research
+- Competitor Analysis
+- SWOT Analysis
+- Business Strategy
+- Brand Name
+- Tagline
+- Landing Page Copy
+- Marketing Plan
+- Launch Checklist
+- Self Evaluation
+- Improved Final Version
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── src/
+│   ├── app/
+│   │   ├── globals.css      # Global styles, dark theme, glassmorphism
+│   │   ├── layout.tsx       # Root layout
+│   │   └── page.tsx         # Main page
+│   ├── components/
+│   │   ├── Dashboard.tsx    # Main dashboard with agent orchestration
+│   │   ├── GoalInput.tsx    # Goal input form with suggestions
+│   │   ├── MemoryPanel.tsx  # Agent memory/context display
+│   │   ├── ReportViewer.tsx # Report viewer with section navigation
+│   │   ├── StageVisualizer.tsx # Animated pipeline visualizer
+│   │   └── ui/
+│   │       ├── badge.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── input.tsx
+│   │       ├── scroll-area.tsx
+│   │       └── separator.tsx
+│   ├── lib/
+│   │   ├── agent.ts         # Agent orchestration engine
+│   │   ├── gemini.ts        # Gemini API client
+│   │   └── utils.ts         # Utility functions
+│   └── types/
+│       └── index.ts         # TypeScript types & constants
+├── .env.example
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tsconfig.json
+└── README.md
+```
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Google Gemini API key |
+
+Get your API key: [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+
+## 🧪 Running for Development
+
+```bash
+npm run dev
+```
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 🤝 Contributing
+
+This is a hackathon project for the Kaggle Vibe Coding Agents Capstone. Contributions, issues, and feature requests are welcome!
+
+## 📄 License
+
+MIT
