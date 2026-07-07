@@ -1,8 +1,13 @@
 # 🚀 LaunchPilot AI
 
-An autonomous AI agent that generates complete business launch strategies from a single goal.
-
+An autonomous AI agent that transforms a single business goal into a complete launch strategy through a transparent seven-stage planning, research, execution, and reflection workflow.
 Built for the **Kaggle Vibe Coding Agents Capstone Project**.
+
+## 🌐 Live Demo
+
+**Application:** https://launchpilot-ai-kappa.vercel.app/
+
+**GitHub:** https://github.com/chukka-venugopalam/launchpilot-ai
 
 ## ✨ Features
 
@@ -159,6 +164,14 @@ npm start
 ## 🤝 Contributing
 
 This is a hackathon project for the Kaggle Vibe Coding Agents Capstone. Contributions, issues, and feature requests are welcome!
+
+## 🎬 Demo Mode
+
+LaunchPilot AI includes a built-in Demo Mode to ensure the complete autonomous workflow can be explored even when a live Gemini API key is unavailable or API quota limits are reached.
+
+When a valid Gemini API key is configured, the application uses the Gemini API to generate responses.
+
+If the API is unavailable, the application automatically switches to Demo Mode and demonstrates the full seven-stage autonomous agent workflow using a predefined business strategy report. This keeps the interface, execution flow, and user experience fully functional for evaluation and demonstration purposes.
 
 ## 📄 License
 
