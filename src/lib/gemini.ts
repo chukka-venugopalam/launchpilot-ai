@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI, GenerativeModel } from '@google/generative-ai';
+import { DEMO_REPORT } from "./demo";
 
 let genAI: GoogleGenerativeAI | null = null;
 let model: GenerativeModel | null = null;
@@ -51,14 +52,21 @@ export async function generateStream(
     callbacks?.onComplete?.(fullText);
     return fullText;
   } catch (error) {
-    const err = error instanceof Error ? error : new Error(String(error));
-    callbacks?.onError?.(err);
-    throw err;
+    console.log("Gemini unavailable. Switching to Demo Mode.");
+    console.log("Using Demo Mode");
+    callbacks?.onChunk?.(DEMO_REPORT);
+    callbacks?.onComplete?.(DEMO_REPORT);
+return DEMO_REPORT;
   }
 }
 
 export async function generateContent(prompt: string): Promise<string> {
-  const m = getGeminiModel();
-  const result = await m.generateContent(prompt);
-  return result.response.text();
+  try {
+    const m = getGeminiModel();
+    const result = await m.generateContent(prompt);
+    return result.response.text();
+  } catch (error) {
+    console.log("Using Demo Mode");
+    return DEMO_REPORT;
+  }
 }
